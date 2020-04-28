@@ -1,7 +1,5 @@
 # Recipe
 
-**Tier:** 1-Beginner
-
 You might not have realized this, but recipe's are nothing more than culinary
 algorithms. Like programs, recipes are a series of imperative steps which,
 if followed correctly, result in a tasty dish.
