@@ -1,0 +1,13 @@
+.navbar {
+    background-color: #E65100;
+}
+
+.container {
+    margin-top: 5%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+.container > .card{
+    margin-bottom: 2%;
+}
