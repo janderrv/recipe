@@ -1,0 +1,36 @@
+<%- include partials/head.ejs %>
+<%- include partials/navbar.ejs %>
+<div class="busca mt-5">
+    <h5 class="display-7 text-center font-weight-bold">Results for: <%= search %></h5>
+</div>
+<div class="container">
+    <% if(recipes != null) {%>
+    <% recipes.forEach(item => { %>
+    <div class="card" style="width: 18rem;">
+        <a href="/id/<%= item.idMeal %>"><img src="<%= item.strMealThumb %>" class="card-img-top"></a>
+        <div class="card-body text-center text-capitalize font-weight-bold">
+            <a href="/id/<%= item.idMeal %>">
+                <h5 class="card-title"><%= item.strMeal %></h5>
+            </a>
+            <a href="/id/<%= item.idMeal %>" role="button" class="btn btn-primary">View
+                Recipe</a>
+        </div>
+    </div>
+    <% });%>
+    <% } else {%>
+    <div class="row">
+        <div class="col-md-12">
+            <div class="error-template">
+                <h1>
+                    Oops!</h1>
+                <h2>
+                    Nothing found</h2>
+                <div class="error-details">
+                    No search results found!
+                </div>
+            </div>
+        </div>
+    </div>
+    <% } %>
+</div>
+<%- include partials/footer.ejs %>

@@ -1,0 +1,36 @@
+<%- include partials/head.ejs %>
+<%- include partials/navbar.ejs %>
+<div class="container-jumbotron">
+    <div class="jumbotron jumbotron-fluid">
+        <h1 class="display-4 text-center text-capitalize font-weight-bold"><%= recipe.strMeal %></h1>
+        <p class="display-6 lead text-center font-weight-bold">
+            Category: <%= recipe.strCategory %>
+        </p>
+        <hr class="my-5">
+        <div class="row">
+            <div class="col-4">
+                <img id="thumb" src="<%= recipe.strMealThumb %>">
+            </div>
+            <div class="col-8 text-center text-break">
+                <h2 class="font-weight-bold">Instructions: </h2>
+                <%= recipe.strInstructions %>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-4">
+                <ul class="list-group font-weight-bold mt-5 text-center text-capitalize">
+                    <h5>Ingredients:</h5>
+                    <% ingredients.forEach(item => {%>
+                        <% if(item != "") { %>
+                            <li class="list-group-item"><%= item %></li>
+                        <% } %>
+                    <% }); %>
+                </ul>
+            </div>
+            <div class="col-8 ">
+                <iframe id="youtube" src="<%= youtube %>" frameborder="0"></iframe>
+            </div>
+        </div>
+    </div>
+</div>
+<%- include partials/footer.ejs %>

@@ -12,6 +12,14 @@ class RecipeController {
             console.log(error);
         }
     }
+    getRecipeByName = async (name) => {
+        try {
+            const response = await axios.get(url + 'search.php?s=' + name);
+            return response.data;
+        } catch (error) {
+            console.log(error);
+        }
+    }
     getRecipeById = async (id) => {
         try {
             const response = await axios.get(url + 'lookup.php?i=' + id);
@@ -23,7 +31,7 @@ class RecipeController {
     getRandomRecipe = async () => {
         let recipes = []
         try {
-            for (let i = 0; i < 9; i++) {
+            for (let i = 0; i < 3; i++) {
                 const response = await axios.get(url + 'random.php');
                 recipes.push(response.data.meals[0]);
             }
@@ -32,6 +40,11 @@ class RecipeController {
             console.log(error);
         }
     }
+    youtubeConverter = (link) => {
+        let x = link.split("=");
+        let youtube = "https://www.youtube.com/embed/" + x[1];
+        return youtube;
+      };
 }
 
 module.exports = new RecipeController();
