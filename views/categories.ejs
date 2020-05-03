@@ -1,11 +1,11 @@
 <%- include partials/head.ejs %>
 <%- include partials/navbar.ejs %>
 <div class="container">
-    <% recipes.forEach(item => { %>
+    <% categories.forEach(item => { %>
     <div class="card" style="width: 18rem;">
         <a href="/id/<%= item.idMeal %>"><img src="<%= item.strMealThumb %>" class="card-img-top"></a>
         <div class="card-body text-center text-capitalize font-weight-bold">
-            <a href="/id/<%= item.idMeal %>"><h5 class="card-title"><%= item.strMeal %></h5></a>    
+            <a href="/id/<%= item.idMeal %>"><h5 class="card-title"><%= item.strMealThumb %></h5></a>
         </div>
     </div>
     <% });%>

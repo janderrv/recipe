@@ -12,6 +12,22 @@ class RecipeController {
             console.log(error);
         }
     }
+    getCategories = async () => {
+        try {
+            const response = await axios.get(url + 'categories.php');
+            return response.data;
+        } catch (error) {
+            console.log(error);
+        }
+    }
+    getByCategory = async (category) => {
+        try {
+            const response = await axios.get(url + 'filter.php?c=' + category);
+            return response.data;
+        } catch (error) {
+            console.log(error);
+        }
+    }
     getRecipeByName = async (name) => {
         try {
             const response = await axios.get(url + 'search.php?s=' + name);
@@ -44,7 +60,7 @@ class RecipeController {
         let x = link.split("=");
         let youtube = "https://www.youtube.com/embed/" + x[1];
         return youtube;
-      };
+    };
 }
 
 module.exports = new RecipeController();
