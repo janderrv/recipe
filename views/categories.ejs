@@ -3,9 +3,9 @@
 <div class="container">
     <% categories.forEach(item => { %>
     <div class="card" style="width: 18rem;">
-        <a href="/id/<%= item.idMeal %>"><img src="<%= item.strMealThumb %>" class="card-img-top"></a>
+        <a href="/category/<%= item.strCategory %>"><img src="<%= item.strCategoryThumb %>" class="card-img-top"></a>
         <div class="card-body text-center text-capitalize font-weight-bold">
-            <a href="/id/<%= item.idMeal %>"><h5 class="card-title"><%= item.strMealThumb %></h5></a>
+            <a href="/category/<%= item.strCategory %>"><h5 class="card-title"><%= item.strCategory %></h5></a>
         </div>
     </div>
     <% });%>
